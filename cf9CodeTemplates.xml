@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<RefData version="1.0" exporter="EA.25">
+	<DataSet name="ColdFusion_Code_Template" table="t_template" filter="TemplateType='#TemplateType#' and TemplateName='#TemplateName#' and Style='#Style#'">
+		<DataRow>
+			<Column name="TemplateID" value="{A4017B74-2395-480d-8E5C-E5F0E1F34846}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class Body"/>
+			<Column name="Template" value="$bases=%ClassInherits%&#xA;%if $bases != &quot;&quot;%&#xA;$bases=&quot; &quot; + $bases&#xA;%endIf%&#xA;&#xA;$persistent=&quot; accessors=&quot; + %qt% + &quot;true&quot; + %qt%&#xA;%if classPersistence == &quot;Persistent&quot;%&#xA;$persistent=&quot; persistent=&quot; + %qt% + &quot;true&quot; + %qt% + &quot; entityname=&quot; + %qt% + %className% +%qt% + &quot; table=&quot; + %qt% + %className% +%qt%&#xA;%endIf%&#xA;&#xA;$import=&quot;&quot;&#xA;%if classStereotype == &quot;eventhandler&quot;%&#xA;$import=&quot;import coldbox.system.*;&quot;&#xA;%endIf%&#xA;&#xA;$table=&quot;&quot;&#xA;%if classAlias != &quot;&quot;%&#xA;$table=&quot; table=&quot; + %qt% + %classAlias% + %qt%&#xA;%endIf%&#xA;&#xA;$import&#xA;component$bases$persistent$table{\n&#xA;&#xA;	// PROPERTY DEFINITIONS&#xA;%list=&quot;Attribute__cfproperties&quot; @separator=&quot;\n&quot; @indent=&quot;&quot;%\n&#xA;&#xA;&#xA;%if genOptGenConstructor == &quot;T&quot;%&#xA;	public %className% function init(){&#xA;		&#xA;		return this;&#xA;	}\n&#xA;%endIf%&#xA;%list=&quot;Operation&quot; @separator=&quot;\n\n&quot; @indent=&quot;	&quot;%&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{75A40F31-50D1-491e-8A61-7A3939A61E70}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Operation"/>
+			<Column name="Template" value="%if opScope == &quot;Protected&quot;%&#xA;&#xA;$access = &quot;&quot;&#xA;&#xA;%else%&#xA;&#xA;$access = %TO_LOWER(opScope)%&#xA;&#xA;%endIf%&#xA;&#xA;%if opNotes != &quot;&quot;%&#xA;&#xA;$notes = &quot;hint=&quot; + %qt% + %opNotes% + %qt%&#xA;&#xA;%else%&#xA;&#xA;$notes = &quot;&quot;&#xA;&#xA;%endIf%&#xA;&#xA;/**&#xA;* %opName%&#xA;* $notes&#xA;*/&#xA;$access %opReturnType% %opName%(%list=&quot;Parameter__cfargument&quot; @separator=&quot;,&quot; @indent=&quot;&quot;%){&#xA;&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{44BF8A24-37CD-4ff3-A9AF-B0F539DFA4FF}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Attribute__getters"/>
+			<Column name="Template" value="$firstLetter = %LEFT(attName,1)%&#xA;&#xA;$firstLetter = %TO_UPPER($firstLetter)%&#xA;&#xA;$rest = %MID(attName,1)%&#xA;&#xA;$getName = &quot;get&quot; + $firstLetter + $rest&#xA;&#xA;&lt;cffunction name=&quot;$getName&quot; access=&quot;public&quot; output=&quot;false&quot; returntype=&quot;any&quot; hint=&quot;Gets the %attName% property&quot;&gt;&#xA;&#xA;	&lt;cfreturn instance.%attName% /&gt;&#xA;&#xA;&lt;/cffunction&gt;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{D76770CA-0AE2-4a6c-8B85-D6794D9FA410}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Attribute__setters"/>
+			<Column name="Template" value="$firstLetter = %LEFT(attName,1)%&#xA;&#xA;$firstLetter = %TO_UPPER($firstLetter)%&#xA;&#xA;$rest = %MID(attName,1)%&#xA;&#xA;$setName = &quot;set&quot; + $firstLetter + $rest&#xA;&#xA;&lt;cffunction name=&quot;$setName&quot; access=&quot;public&quot; output=&quot;false&quot; returntype=&quot;void&quot; hint=&quot;Sets a new value for the %attName% property&quot;&gt;&#xA;&#xA;	&lt;cfargument name=&quot;new$firstLetter$rest&quot; type=&quot;%attType%&quot; required=&quot;yes&quot; /&gt;&#xA;&#xA;	&lt;cfset instance.%attName% = arguments.new$firstLetter$rest /&gt;&#xA;&#xA;&lt;/cffunction&gt;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{F3704959-232B-415d-88D2-3EF27CE22FEB}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Attribute__getters_setters"/>
+			<Column name="Template" value="$firstLetter = %LEFT(attName,1)%&#xA;$firstLetter = %TO_UPPER($firstLetter)%&#xA;$rest = %MID(attName,1)%&#xA;$getName = &quot;get&quot; + $firstLetter + $rest&#xA;$setName = &quot;set&quot; + $firstLetter + $rest&#xA;%if attScope == &quot;Private&quot;%&#xA;&lt;!--- Get/Set For %attName% ---&gt;&#xA;&lt;cffunction name=&quot;$getName&quot; access=&quot;public&quot; output=&quot;false&quot; returntype=&quot;any&quot; hint=&quot;Gets the %attName% property&quot;&gt;&#xA;&#xA;	&lt;cfreturn instance.%attName% /&gt;&#xA;&#xA;&lt;/cffunction&gt;&#xA;&lt;cffunction name=&quot;$setName&quot; access=&quot;public&quot; output=&quot;false&quot; returntype=&quot;void&quot; hint=&quot;Sets a new value for the %attName% property&quot;&gt;&#xA;&#xA;	&lt;cfargument name=&quot;new$firstLetter$rest&quot; type=&quot;%attType%&quot; required=&quot;yes&quot; /&gt;&#xA;&#xA;	&lt;cfset instance.%attName% = arguments.new$firstLetter$rest /&gt;&#xA;&#xA;&lt;/cffunction&gt;&#xA;%endIf%&#xA;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{3B700EFF-B684-4082-9558-8D453DDE3E91}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Attribute"/>
+			<Column name="Template" value="$firstLetter = %LEFT(attName,1)%&#xA;$firstLetter = %TO_UPPER($firstLetter)%&#xA;&#xA;$rest = %MID(attName,1)%&#xA;$setName = &quot;set&quot; + $firstLetter + $rest&#xA;&#xA;$setName(arguments.%attName%);"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{66DFD6B6-CF2B-4ea1-8224-455790743FB4}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class Inherits"/>
+			<Column name="Template" value="%PI=&quot;&quot;%&#xA;$bases=%list=&quot;ClassBase&quot; @separator=&quot; &quot;%&#xA;$interfaces=%list=&quot;ClassInterface&quot; @separator=&quot;, &quot;%&#xA;%if $bases != &quot;&quot; and $interfaces != &quot;&quot;%&#xA;extends=&quot;$bases&quot; implements=&quot;$interfaces&quot;&#xA;%elseIf $bases != &quot;&quot;%&#xA;extends=&quot;$bases&quot;&#xA;%elseIf $interfaces != &quot;&quot;%&#xA;implements=&quot;$interfaces&quot;&#xA;%endIf%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{23B57FAF-1593-485a-B1C0-312405635031}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Attribute__cfproperties"/>
+			<Column name="Template" value="%PI=&quot;&quot;%&#xA;$initial = %qt% + %attInitial% + %qt%&#xA;%if $initial != &quot;&quot;%&#xA;%if attType == &quot;Boolean&quot; or attType == &quot;boolean&quot;%&#xA;$initial = %qt% + &quot;false&quot; + %qt%&#xA;%elseIf attType == &quot;struct&quot; or attType == &quot;Struct&quot;%&#xA;$initial = %qt% + &quot;#structNew()#&quot; + %qt%&#xA;%elseIf attType == &quot;array&quot; or attType == &quot;Array&quot;%&#xA;$initial = %qt% + &quot;#ArrayNew(1)#&quot; + %qt%&#xA;%elseIf attType == &quot;int&quot; or attType == &quot;numeric&quot; or attType == &quot;Numeric&quot;%&#xA;$initial = %qt% + &quot;0&quot; + %qt%&#xA;%endIf%	&#xA;%endIf%&#xA;&#xA;$column=&quot;&quot;&#xA;%if classPersistence == &quot;Persistent&quot; and attAlias != &quot;&quot;%&#xA;$column=&quot; column=&quot; + %qt% + %attAlias% + %qt%&#xA;%endIf%&#xA;&#xA;property name=&quot;%attName%&quot; type=&quot;%attType%&quot; default=$initial$column;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{9EF1AA24-9FAA-41fc-8868-FCAB088BCA8B}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Attribute__instancesetup"/>
+			<Column name="Template" value="%PI=&quot;&quot;%&#xA;$initial = %qt% + %attInitial% + %qt%&#xA;%if $initial != &quot;&quot;%&#xA;%if attType == &quot;Boolean&quot; or attType == &quot;boolean&quot;%&#xA;$initial = &quot;false&quot;&#xA;%elseIf attType == &quot;struct&quot; or attType == &quot;Struct&quot;%&#xA;$initial = &quot;structNew()&quot;&#xA;%elseIf attType == &quot;array&quot; or attType == &quot;Array&quot;%&#xA;$initial = &quot;ArrayNew(1)&quot;&#xA;%elseIf attType == &quot;int&quot; or attType == &quot;numeric&quot; or attType == &quot;Numeric&quot;%&#xA;$initial = &quot;0&quot;&#xA;%endIf%	&#xA;%endIf%&#xA;%if attScope == &quot;Private&quot;%&#xA;instance.%attName% = $initial;&#xA;%else%&#xA;this.%attName% = $initial;&#xA;%endIf%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{4E5A348A-CE02-4cc7-AB20-AEDEBE6B2F0F}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="File"/>
+			<Column name="Template" value="%list=&quot;Class&quot; @separator=&quot;\n\n&quot;%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{8A2EE7EE-70FA-412d-8DF6-1D941AA87D5E}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class Base"/>
+			<Column name="Template" value="%PI=&quot;&quot;%&#xA;%classBaseName%&#xA;%if classIsInstantiated == &quot;T&quot;%&#xA;&lt;%classArguments%&gt;&#xA;%endIf%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{3A643908-94C0-4f7d-8635-4396B736A630}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class Interface"/>
+			<Column name="Template" value="%ClassBase%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{741232C0-C562-45c8-BB2E-813BF3B0ED1C}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Linked Class Base"/>
+			<Column name="Template" value="%PI=&quot;&quot;%&#xA;%linkParentName%&#xA;%if classIsInstantiated == &quot;T&quot;%&#xA;&lt;%classArguments%&gt;&#xA;%endIf%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{500E7F53-08D3-45ac-AFB7-EC0C29484A28}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Linked Class Interface"/>
+			<Column name="Template" value="%LinkedClassBase%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{9703CEC7-FEAC-46a6-BD80-EAD654779250}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class Impl"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{EFCE8BEE-CF05-4018-A4A4-97622167CC4C}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class Notes"/>
+			<Column name="Template" value="/**&#xA;* &lt;!-----------------------------------------------------------------------&#xA;* Author     :	%classAuthor%&#xA;* Date        :	%classCreated%&#xA;* %classNotes%&#xA;* -----------------------------------------------------------------------&gt;&#xA;*/"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{16954596-0CCB-4765-B426-17D0B2D9E61C}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class"/>
+			<Column name="Template" value="%ClassNotes%&#xA;%ClassBody%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{003F642D-F99B-4d8d-BB15-1D421BF7AB72}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Class Parameter"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{54EE1B39-399C-40fa-B408-1C2651EC44E2}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Attribute Declaration"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{AA19BBC8-6543-4a2e-9173-0081D895E33A}"/>
+			<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+			<Column name="TemplateName" value="Parameter__cfargument"/>
+			<Column name="Template" value="%if paramKind == &quot;In&quot;%&#xA;&#xA;$required = &quot;false&quot;&#xA;&#xA;$default = &quot;=&quot; + %qt% + %paramDefault% + %qt%&#xA;&#xA;%elseIf paramKind == &quot;InOut&quot;%&#xA;&#xA;$required = &quot;true&quot;&#xA;&#xA;%else%&#xA;&#xA;$required = &quot;&quot;&#xA;&#xA;%endIf%&#xA;&#xA;%if paramNotes == &quot;&quot;%&#xA;&#xA;$hint = &quot;hint=&quot; + %qt% + &quot;Initial value for the &quot; + %paramName% +  &quot;property.&quot; + %qt%&#xA;&#xA;%else%&#xA;&#xA;$hint = &quot;hint=&quot; + %qt% + %paramNotes% + %qt%&#xA;&#xA;%endIf%&#xA;&#xA;&#xA;%paramType% %paramName%$default"/>
+		</DataRow>
+	</DataSet>
+</RefData>

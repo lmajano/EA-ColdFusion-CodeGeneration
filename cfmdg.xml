@@ -1,0 +1,386 @@
+<MDG.Technology version="1.0">
+			<Documentation id="cfmdg" name="ColdFusion" version="2.0" notes="Getting Started   
+1.  Create a new project
+
+2. On the right side of the screen you should see a &quot;Project View&quot; panel.
+
+3. At the bottom, there are generally two tabs, &quot;Resource View&quot; and &quot;Project View&quot;.  You'll do most of you work in the project view, but for this, switch to the resource view.
+
+4. At the top of the tree, you should see a folder called &quot;MDG Technologies&quot;.  Right click on it and select &quot;Import Technology&quot;.
+
+5. Click the ellipsis next to filename and browse to the xml file you downloaded from my blog.  You should see the options light up for the types of things that are going to be imported.
+
+6. Click the &quot;Import&quot; button
+
+At this point, you're ready to create some cfcs.  Switch back to project view and add a class diagram.
+
+I generally do mine under &quot;Logical view | Logical Model&quot;.  Drag a class onto the stage and add a few properties and methods.  
+Once you are done, you can right click on the class, pick a location for the file and have ea generate a cfc shell for you.
+
+You can pull up this information inside EA by right clicking on the ColdFusion entry under MDG Technologies and selecting Help."/>
+			<UMLProfiles/>
+			<UMLPatterns/>
+			<TaggedValueTypes>
+				<RefData version="1.0" exporter="EA.25">
+					<DataSet name="Property Types" table="t_propertytypes" filter="Property='#Property#'">
+						<DataRow>
+							<Column name="Property" value="Role"/>
+							<Column name="Description" value="Person role "/>
+							<Column name="Notes" value="Used in entities"/>
+						</DataRow>
+					</DataSet>
+				</RefData>
+			</TaggedValueTypes>
+			<CodeModules>
+				<CodeModule language="ColdFusion" notes="">
+					<CodeTypes>
+						<RefData version="1.0" exporter="EA.25">
+							<DataSet name="Model Data Types - Code and DDL" table="t_datatypes" filter="Type='#Type#' and ProductName='#ProductName#' and DataType='#DataType#'" stoplist=";DatatypeID;">
+								<DataRow>
+									<Column name="Type" value="DDL"/>
+									<Column name="ProductName" value="Oracle"/>
+									<Column name="DataType" value="VARCHAR2"/>
+									<Column name="Size" value="1"/>
+									<Column name="MaxLen" value="4000"/>
+									<Column name="MaxPrec" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="DefaultLen" value="50"/>
+									<Column name="DefaultPrec" value="0"/>
+									<Column name="DefaultScale" value="0"/>
+									<Column name="User" value="0"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="GenericType" value="varchar"/>
+									<Column name="DatatypeID" value="2"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="any"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="240"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="array"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="241"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="binary"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="242"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="boolean"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="243"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="data"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="244"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="guid"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="245"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="numeric"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="246"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="query"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="247"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="string"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="248"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="struct"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="249"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="uuid"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="250"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="variableName"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="251"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="void"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="252"/>
+								</DataRow>
+								<DataRow>
+									<Column name="Type" value="Code"/>
+									<Column name="ProductName" value="ColdFusion"/>
+									<Column name="DataType" value="xml"/>
+									<Column name="Size" value="0"/>
+									<Column name="MaxScale" value="0"/>
+									<Column name="User" value="1"/>
+									<Column name="PDATA4" value="TechID=cfmdg;"/>
+									<Column name="DatatypeID" value="253"/>
+								</DataRow>
+							</DataSet>
+						</RefData>
+					</CodeTypes>
+					<CodeTemplates>
+						<RefData version="1.0" exporter="EA.25">
+							<DataSet name="ColdFusion_Code_Template" table="t_template" filter="TemplateType='#TemplateType#' and TemplateName='#TemplateName#' and Style='#Style#'">
+								<DataRow>
+									<Column name="TemplateID" value="{CBA39A7B-50B2-43d6-B8A1-55F99E6F8D15}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="File"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="%ClassBody%
+"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{D09A2FE2-E060-4866-9A3E-8933B9654AF1}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Class Body"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="&lt;cfcomponent hint=&quot;%classNotes%&quot;&gt;
+%if genOptGenConstructor == &quot;T&quot;%
+
+	&lt;cffunction name=&quot;init&quot; access=&quot;public&quot; output=&quot;false&quot; returntype=&quot;any&quot; hint=&quot;Initialize the %className% object&quot;&gt;
+%list=&quot;Attribute__cfargument&quot; @separator=&quot;\n&quot; @indent=&quot;		&quot;%
+		&lt;cfscript&gt;
+%list=&quot;Attribute&quot; @separator=&quot;\n&quot; @indent=&quot;			&quot;%
+			return this;
+		&lt;/cfscript&gt;	
+	&lt;/cffunction&gt;
+%endIf%
+\n
+&lt;!--- ****************************
+	Getters 
+********************************** ---&gt;
+\n
+%list=&quot;Attribute__getters&quot; @separator=&quot;\n\n&quot; @indent=&quot;	&quot;%
+\n
+&lt;!--- ****************************
+	Setters 
+********************************** ---&gt;
+\n
+%list=&quot;Attribute__setters&quot; @separator=&quot;\n\n&quot; @indent=&quot;	&quot;%
+\n
+&lt;!--- ****************************
+	Methods 
+********************************** ---&gt;
+\n
+%list=&quot;Operation&quot; @separator=&quot;\n\n&quot; @indent=&quot;	&quot;%
+&lt;/cfcomponent&gt;"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{4AF653C9-D29D-41e5-9268-084AAB8130A0}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Attribute"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="$firstLetter = %LEFT(attName,1)%
+$firstLetter = %TO_UPPER($firstLetter)%
+$rest = %MID(attName,1)%
+$setName = &quot;set&quot; + $firstLetter + $rest
+$setName(arguments.%attName%);
+"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{81BAD141-9423-403b-A902-C156FC8B3C7E}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Attribute__cfargument"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="%if attNotes == &quot;&quot;%
+&lt;cfargument name=&quot;%attName%&quot; required=&quot;false&quot; type=&quot;%attType%&quot; default=&quot;%attInitial%&quot; hint=&quot;Initial value for the %attName% property.&quot; /&gt;
+%else%
+&lt;cfargument name=&quot;%attName%&quot; required=&quot;false&quot; type=&quot;%attType%&quot; default=&quot;%attInitial%&quot; hint=&quot;%attNotes%&quot; /&gt;
+%endIf%"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{6FCC979B-82C6-4243-ADC6-CEBC2777654A}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Attribute__getters"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="$firstLetter = %LEFT(attName,1)%
+$firstLetter = %TO_UPPER($firstLetter)%
+$rest = %MID(attName,1)%
+$getName = &quot;get&quot; + $firstLetter + $rest
+&lt;cffunction name=&quot;$getName&quot; access=&quot;public&quot; output=&quot;false&quot; returntype=&quot;any&quot; hint=&quot;Gets the %attName% property&quot;&gt;
+	&lt;cfreturn Variables.%attName% /&gt;
+&lt;/cffunction&gt;"/>
+
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{039E4E4D-172B-4a24-80B7-43A1816E37E7}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Attribute__setters"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="$firstLetter = %LEFT(attName,1)%
+$firstLetter = %TO_UPPER($firstLetter)%
+$rest = %MID(attName,1)%
+$setName = &quot;set&quot; + $firstLetter + $rest
+&lt;cffunction name=&quot;$setName&quot; access=&quot;public&quot; output=&quot;false&quot; returntype=&quot;void&quot; hint=&quot;Sets a new value for the %attName% property&quot;&gt;
+	&lt;cfargument name=&quot;new$firstLetter$rest&quot; type=&quot;%attType%&quot; required=&quot;yes&quot; /&gt;
+	&lt;cfset Variables.%attName% = arguments.new$firstLetter$rest /&gt;
+&lt;/cffunction&gt;"/>
+
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{E4F962A8-31D9-467d-B157-408F3AC12CC9}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Operation"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="%if opScope == &quot;Protected&quot;%
+$access = &quot;&quot;
+%else%
+$access = %TO_LOWER(opScope)%
+%endIf%
+%if opNotes != &quot;&quot;%
+$notes = &quot;hint=&quot; + %qt% + %opNotes% + %qt%
+%else%
+$notes = &quot;&quot;
+%endIf%
+&lt;cffunction name=&quot;%opName%&quot; access=&quot;$access&quot; returntype=&quot;%opReturnType%&quot; output=&quot;false&quot; $notes&gt;
+%list=&quot;Parameter__cfargument&quot; @separator=&quot;\n&quot; @indent=&quot;	&quot;%
+&lt;/cffunction&gt;
+
+"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{8B6F8F52-2D18-46d5-9F08-CA822257A8A8}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Parameter"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="%paramType%"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{799C2904-A351-4509-ACD2-A730E4867FAD}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Parameter__cfargument"/>
+									<Column name="Style" value="TechID=cfmdg;"/>
+									<Column name="Template" value="%if paramKind == &quot;In&quot;%
+$required = &quot;false&quot;
+$default = &quot;default=&quot; + %qt% + %paramDefault% + %qt%
+%elseIf paramKind == &quot;InOut&quot;%
+$required = &quot;true&quot;
+%else%
+$required = &quot;&quot;
+%endIf%
+%if paramNotes == &quot;&quot;%
+$hint = &quot;hint=&quot; + %qt% + &quot;Initial value for the &quot; + %paramName% +  &quot;property.&quot; + %qt%
+%else%
+$hint = &quot;hint=&quot; + %qt% + %paramNotes% + %qt%
+%endIf%
+
+&lt;cfargument name=&quot;%paramName%&quot; required=&quot;$required&quot; type=&quot;%paramType%&quot; $default $hint /&gt;
+"/>
+
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{9703CEC7-FEAC-46a6-BD80-EAD654779250}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Class Impl"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{EFCE8BEE-CF05-4018-A4A4-97622167CC4C}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Class Notes"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{16954596-0CCB-4765-B426-17D0B2D9E61C}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Class"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{D3A6D453-99A0-4e7c-840A-B1404A283292}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Class Declaration"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{003F642D-F99B-4d8d-BB15-1D421BF7AB72}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Class Parameter"/>
+								</DataRow>
+								<DataRow>
+									<Column name="TemplateID" value="{54EE1B39-399C-40fa-B408-1C2651EC44E2}"/>
+									<Column name="TemplateType" value="ColdFusion_Code_Template"/>
+									<Column name="TemplateName" value="Attribute Declaration"/>
+								</DataRow>
+							</DataSet>
+						</RefData>
+					</CodeTemplates>
+				</CodeModule>
+			</CodeModules>
+			<Images>
+				<RefData version="1.0" exporter="EA.25"></RefData>
+			</Images>
+		</MDG.Technology>
